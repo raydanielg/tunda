@@ -2,9 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return redirect('/home');
-});
+Route::get('/', [App\Http\Controllers\VideoController::class, 'landing'])->name('landing');
 
 Auth::routes();
 
@@ -16,3 +14,8 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/videos/vip', [App\Http\Controllers\VideoController::class, 'vip'])->name('videos.vip');
+Route::get('/videos/regular', [App\Http\Controllers\VideoController::class, 'regular'])->name('videos.regular');
+Route::get('/videos/all', [App\Http\Controllers\VideoController::class, 'all'])->name('videos.all');
+Route::get('/videos/{video}', [App\Http\Controllers\VideoController::class, 'show'])->name('videos.show');
