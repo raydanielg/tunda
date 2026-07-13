@@ -22,6 +22,8 @@ class VideoFactory extends Factory
             'is_featured' => $this->faker->boolean(20),
             'duration' => $this->faker->randomElement(['05:30', '12:45', '08:20', '15:10', '03:55']),
             'views' => $this->faker->numberBetween(100, 50000),
+            'photos_count' => $this->faker->numberBetween(5, 120),
+            'videos_count' => $this->faker->numberBetween(1, 45),
         ];
     }
 

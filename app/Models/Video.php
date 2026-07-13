@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-#[Fillable(['title', 'description', 'thumbnail_url', 'video_url', 'type', 'is_featured', 'duration', 'views'])]
+#[Fillable(['title', 'description', 'thumbnail_url', 'video_url', 'type', 'is_featured', 'duration', 'views', 'photos_count', 'videos_count'])]
 class Video extends Model
 {
     /** @use HasFactory<\Database\Factories\VideoFactory> */
@@ -17,6 +17,8 @@ class Video extends Model
         return [
             'is_featured' => 'boolean',
             'views' => 'integer',
+            'photos_count' => 'integer',
+            'videos_count' => 'integer',
         ];
     }
 
